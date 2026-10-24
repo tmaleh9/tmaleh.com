@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Problem Depth Ladder · Taissa Maleh</title>
+<meta name="description" content="Score your own company first. Five rungs, the test I use in every pre-seed review. Free, private, 5 minutes.">
+<link rel="canonical" href="https://tmaleh.com/ladder/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tmaleh.com/ladder/">
+<meta property="og:title" content="Score your own company first">
+<meta property="og:description" content="The Problem Depth Ladder: five rungs, the test I use in every pre-seed review.">
+<meta property="og:image" content="https://tmaleh.com/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@tmaleh9">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,800&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --field:#eceef2; --paper:#f7f8fa; --ink:#111318; --ink-2:#5b606c; --line:#d3d7df;
+  --beam:#3d7bff; --beam-soft:rgb(61 123 255 / .12); --ok:#1f9d63; --warn:#c77a12;
+  --f-display:"Geist","Helvetica Neue",Arial,sans-serif;
+  --f-mark:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-mono:"Geist Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){ :root{
+  --field:#0e1015; --paper:#171a21; --ink:#eef0f4; --ink-2:#9aa0ad; --line:#2a2e38;
+  --beam:#6b9bff; --beam-soft:rgb(107 155 255 / .14); --ok:#3ccf8e; --warn:#f0a63a; color-scheme:dark }}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--field);color:var(--ink);font-family:var(--f-display);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--beam);outline-offset:3px;border-radius:6px}
+.wrap{max-width:760px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-left,0px))}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:calc(18px + env(safe-area-inset-top,0px)) 0 0}
+.mark{font-family:var(--f-mark);font-stretch:125%;font-weight:800;letter-spacing:-.04em;text-decoration:none;font-size:1.15rem;display:inline-flex;align-items:baseline}
+.mark .dot{display:inline-block;width:.24em;height:.24em;border-radius:50%;background:#3d7bff;margin-left:.08em}
+.top a.book{font-size:14px;font-weight:500;padding:8px 14px;border-radius:999px;background:var(--ink);color:var(--field);text-decoration:none}
+.eyebrow{font-family:var(--f-mono);font-size:13px;color:var(--ink-2);text-transform:uppercase;letter-spacing:.1em;margin:0 0 12px}
+h1,h2,h3{font-weight:300;letter-spacing:-.04em;line-height:1.02;margin:0;text-wrap:balance}
+.intro{padding:56px 0 28px}
+.intro h1{font-size:clamp(2.4rem,7vw,4rem);font-weight:500}
+.intro h1 span{display:block;font-weight:200}
+.intro p.lede{color:var(--ink-2);max-width:56ch;margin:18px 0 0}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;font-family:var(--f-mono);font-size:12px}
+.meta span{padding:5px 10px;border:1px solid var(--line);border-radius:999px;color:var(--ink-2)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:clamp(20px,4vw,32px);margin:0 0 16px}
+.progress{display:flex;gap:6px;margin:0 0 22px}
+.progress i{flex:1;height:4px;border-radius:4px;background:var(--line)}
+.progress i.on{background:var(--beam)}
+.step-k{font-family:var(--f-mono);font-size:12px;color:var(--beam);text-transform:uppercase;letter-spacing:.1em}
+.card h2{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:400;margin:8px 0 6px}
+.card .shows{color:var(--ink-2);margin:0 0 18px}
+.q{font-weight:500;margin:0 0 8px;letter-spacing:-.01em}
+label.l{display:block;font-size:14px;color:var(--ink-2);margin:18px 0 8px}
+input[type=text],textarea{width:100%;font:inherit;color:var(--ink);background:var(--field);border:1px solid var(--line);border-radius:14px;padding:12px 14px;resize:vertical}
+textarea{min-height:92px}
+input:focus,textarea:focus{outline:none;border-color:var(--beam);box-shadow:0 0 0 3px var(--beam-soft)}
+.opts{display:grid;gap:8px}
+.opt{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:1px solid var(--line);border-radius:14px;cursor:pointer;background:var(--field);transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--ink-2)}
+.opt input{margin:4px 0 0;accent-color:var(--beam)}
+.opt.sel{border-color:var(--beam);background:var(--beam-soft)}
+.opt b{font-weight:500;display:block}
+.opt small{color:var(--ink-2);font-size:13px}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:999px;font:inherit;font-weight:500;font-size:15px;border:1px solid var(--ink);cursor:pointer;text-decoration:none}
+.btn.primary{background:var(--ink);color:var(--field)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.beam{background:var(--beam);border-color:var(--beam);color:#fff}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.err{color:var(--warn);font-size:14px;margin-top:10px;min-height:1.2em}
+/* result */
+.score{display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap}
+.score .n{font-family:var(--f-mark);font-stretch:125%;font-weight:800;font-size:clamp(4.5rem,16vw,7.5rem);line-height:.85;letter-spacing:-.05em}
+.score .n small{font-size:.35em;color:var(--ink-2);letter-spacing:0}
+.score .lbl{padding-bottom:8px}
+.score .lbl b{display:block;font-size:1.4rem;font-weight:500;letter-spacing:-.02em}
+.score .lbl span{color:var(--ink-2)}
+.rungs{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:8px}
+.rungs li{display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:14px}
+.rungs .num{font-family:var(--f-mono);font-size:13px;color:var(--ink-2)}
+.rungs .st{font-family:var(--f-mono);font-size:12px;padding:4px 9px;border-radius:999px;white-space:nowrap}
+.st.pass{background:color-mix(in srgb,var(--ok) 15%,transparent);color:var(--ok)}
+.st.claim{background:color-mix(in srgb,var(--warn) 15%,transparent);color:var(--warn)}
+.st.none{background:var(--field);color:var(--ink-2)}
+.rungs li.break{border-color:var(--beam);box-shadow:0 0 0 1px var(--beam)}
+.verdict{font-size:1.15rem;line-height:1.5;margin:0}
+.next h3{font-size:1.5rem;font-weight:400;margin:0 0 10px}
+.next ol{margin:0;padding-left:20px}
+.next li{margin:0 0 8px}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
+.compare div{padding:14px 16px;border-radius:14px;border:1px solid var(--line);font-size:15px}
+.compare b{font-family:var(--f-mono);font-size:12px;font-weight:500;display:block;margin-bottom:6px;color:var(--ink-2);text-transform:uppercase;letter-spacing:.08em}
+@media (max-width:620px){ .compare{grid-template-columns:1fr} }
+.prompt pre{white-space:pre-wrap;word-break:break-word;font-family:var(--f-mono);font-size:13px;line-height:1.55;background:var(--field);border:1px solid var(--line);border-radius:14px;padding:16px;max-height:320px;overflow:auto;margin:14px 0}
+.prompt .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.copied{font-family:var(--f-mono);font-size:12px;color:var(--ok)}
+.cta{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cta .card{margin:0;display:flex;flex-direction:column;gap:12px}
+.cta .card h3{font-size:1.5rem;font-weight:400}
+.cta .card p{margin:0;color:var(--ink-2)}
+.cta .card p.body{flex:1}
+.cta .tear{border-color:var(--beam);box-shadow:0 0 0 1px var(--beam),0 0 30px color-mix(in srgb,var(--beam) 35%,transparent)}
+.cta .price{font-family:var(--f-mono);font-size:14px}
+@media (max-width:700px){ .cta{grid-template-columns:1fr} }
+.bh-form iframe{display:block;color-scheme:light;background:transparent}
+.private{font-family:var(--f-mono);font-size:12px;color:var(--ink-2);margin:28px 0 0}
+footer{padding:40px 0 calc(40px + env(safe-area-inset-bottom,0px));color:var(--ink-2);font-size:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer a{text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="/">tmaleh<span class="dot" aria-hidden="true"></span></a>
+    <a class="book" href="https://cal.com/tmaleh/teardown">Book a teardown</a>
+  </header>
+
+  <section class="intro" id="intro">
+    <p class="eyebrow">The Problem Depth Ladder</p>
+    <h1>Score your own company first. <span>Before an investor does.</span></h1>
+    <p class="lede">At pre-seed, how deeply you understand the problem predicts who builds the category better than the product, the resume or early traction. Five rungs. Each one needs the one below it. A report, an article or a smart framing is not evidence. A conversation, a dataset you built or a behaviour you watched is.</p>
+    <div class="meta"><span>5 minutes</span><span>free</span><span>nothing is stored or sent</span></div>
+  </section>
+
+  <main id="app"></main>
+
+  <footer>
+    <span>Built by Taissa Maleh from hundreds of pre-seed reviews.</span>
+    <span><a href="/">tmaleh.com</a> · <a href="https://github.com/tmaleh9/founder-tools">The Ladder on GitHub</a></span>
+  </footer>
+</div>
+
+<script>
+const RUNGS=[
+ {n:"Symptom",shows:"The pain, and exactly who has it.",q:"Who felt this problem last week, and what did it cost them?",ph:"e.g. Clinic office managers. One I spoke to on Tuesday lost about four hours to insurance calls.",
+  five:"Clinic managers lose four hours a week to insurance calls, and I can name the eleven I timed.",
+  fix:["Talk to 10 people who have the problem this week. Not friends, not investors.","Ask each one: when did this last happen, and what did it cost you? Write down the number they say.","Stop when you can say who has it in one sentence a stranger could find."]},
+ {n:"First derivative",shows:"What is changing, and how fast.",q:"What is different about this problem now than two years ago, and how do you know?",ph:"e.g. Payers moved claims to portals in 2025. Managers told me call volume went up, not down.",
+  five:"It got worse after payers moved to portals, and the managers I sat with showed me their call logs from before and after.",
+  fix:["Ask the people you interviewed: what changed in the last two years, and when did you notice?","Find one number that moved (time, cost, volume) and get it from them, not from a report.","Write the change as one line with a date in it."]},
+ {n:"Second derivative",shows:"Why it is changing, with evidence you gathered yourself.",q:"Show me something you found that is not in any report.",ph:"e.g. Portal denials are coded so the clinic, not the payer, eats the rework. I saw it in 30 claim files.",
+  five:"The portal fixes the time, not the blame. I found it by reading 30 denied claims myself.",
+  fix:["Go one level under the change: why is it happening? Ask why three times in a row.","Collect something first-hand: files, screenshots, a tally, a shadowing session.","If your answer could come from a market report, it does not count yet."]},
+ {n:"Third derivative",shows:"The root cause in human terms: incentives, fear, status, trust, habit.",q:"If the technology got ten times cheaper tomorrow, why would the problem still exist?",ph:"e.g. A denied claim gets blamed on the manager, so they keep the calls to protect themselves.",
+  five:"Managers keep the calls because a denial is blamed on them, not the payer. Cheaper software does not change who gets blamed.",
+  fix:["Ask: who gets blamed, who gets credit, who is afraid of what, when this goes wrong?","Name the incentive, fear, status or habit that keeps the problem alive.","Test it: would the problem survive if the technology were free? If not, you have not found the root."]},
+ {n:"Community",shows:"People who share the belief, already gathering around you.",q:"Who shows up for this problem without being paid to?",ph:"e.g. 40 managers in a group I started to trade appeal scripts. They asked me to build this.",
+  five:"Forty of them are in a group I started to trade appeal scripts, and they asked me to build this.",
+  fix:["Start the smallest gathering around the problem: a group chat, a monthly call, a shared doc.","Give before you ask: share what you learned in rungs 1 to 4 with the people who have the problem.","Count who comes back without being asked. That number is your rung 5."]}
+];
+const EVIDENCE=[
+ {v:"talk",t:"I talked to people who have it",s:"Interviews, calls, sitting next to them",w:2},
+ {v:"watch",t:"I watched them do it",s:"Their workaround, their screen, their process",w:2},
+ {v:"data",t:"Data I collected or built myself",s:"A tally, a dataset, files I read",w:2},
+ {v:"own",t:"My own experience of the problem",s:"I lived it, but have not checked it with others",w:1},
+ {v:"report",t:"A report, article or market study",s:"Someone else's research",w:0},
+ {v:"none",t:"I don't know yet",s:"Honest answer, no shame",w:0}
+];
+const state={step:0,company:"",who:"",answers:RUNGS.map(()=>({text:"",ev:""})),fu:{recent:"",count:"",fix:""}};
+const app=document.getElementById('app');
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const TOTAL=RUNGS.length+3; // intro form + 5 rungs + 2 follow-ups
+function progress(){return '<div class="progress" aria-hidden="true">'+Array.from({length:TOTAL},(_,i)=>'<i class="'+(i<=state.step?'on':'')+'"></i>').join('')+'</div>'}
+function rungScore(i){const ev=EVIDENCE.find(e=>e.v===state.answers[i].ev);return ev?ev.w:0}
+function compute(){
+  // highest consecutive rung with first-hand evidence (weight 2)
+  let s=0; for(let i=0;i<RUNGS.length;i++){ if(rungScore(i)===2 && state.answers[i].text.trim().length>=15) s=i+1; else break; }
+  const notes=[];
+  // follow-up adjustments: stale or thin evidence caps the score
+  if(s>0 && state.fu.recent==="old"){ s=s-1; notes.push("Your strongest evidence is more than 6 months old, so I counted one rung less. Problems move. Go back and check it."); }
+  if(s>=1 && state.fu.count==="few"){ s=Math.min(s,1); notes.push("Fewer than 5 people is a story, not a pattern. Rungs above 1 need more than a handful of voices."); }
+  const brk=Math.min(s,RUNGS.length-1);
+  return {score:s,breakAt:s<RUNGS.length?s:null,notes};
+}
+function render(){
+  const st=state.step;
+  if(st===0){
+    app.innerHTML='<section class="card">'+progress()+'<p class="step-k">Start</p><h2>Your company in one line</h2><p class="shows">This stays in your browser. It only fills the prompt at the end.</p>'+
+    '<label class="l" for="company">What are you building, for whom?</label><input id="company" type="text" maxlength="200" placeholder="e.g. Claims software for independent clinics" value="'+esc(state.company)+'">'+
+    '<label class="l" for="who">Who has the problem, as specifically as you can say it?</label><input id="who" type="text" maxlength="200" placeholder="e.g. Office managers at clinics with 3 to 10 doctors" value="'+esc(state.who)+'">'+
+    '<div class="err" id="err"></div><div class="nav"><span></span><button class="btn primary" id="next">Start the ladder</button></div></section>';
+    document.getElementById('next').onclick=()=>{state.company=document.getElementById('company').value.trim();state.who=document.getElementById('who').value.trim();if(!state.company||!state.who){document.getElementById('err').textContent='Fill both lines. The more specific, the more useful the result.';return}go(1)};
+    return;
+  }
+  if(st>=1 && st<=RUNGS.length){
+    const i=st-1,r=RUNGS[i],a=state.answers[i];
+    app.innerHTML='<section class="card">'+progress()+'<p class="step-k">Rung '+(i+1)+' of 5</p><h2>'+r.n+'</h2><p class="shows">You can show: '+r.shows+'</p>'+
+    '<p class="q">'+r.q+'</p><textarea id="t" maxlength="1200" placeholder="'+esc(r.ph)+'">'+esc(a.text)+'</textarea>'+
+    '<label class="l">Where does this answer come from?</label><div class="opts" role="radiogroup">'+EVIDENCE.map(e=>'<label class="opt'+(a.ev===e.v?' sel':'')+'"><input type="radio" name="ev" value="'+e.v+'"'+(a.ev===e.v?' checked':'')+'><span><b>'+e.t+'</b><small>'+e.s+'</small></span></label>').join('')+'</div>'+
+    '<div class="err" id="err"></div><div class="nav"><button class="btn ghost" id="back">Back</button><button class="btn primary" id="next">'+(i===RUNGS.length-1?'Two last questions':'Next rung')+'</button></div></section>';
+    app.querySelectorAll('.opt input').forEach(inp=>inp.onchange=()=>{app.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));inp.closest('.opt').classList.add('sel')});
+    document.getElementById('back').onclick=()=>{save(i);go(st-1)};
+    document.getElementById('next').onclick=()=>{save(i);if(!state.answers[i].ev){document.getElementById('err').textContent='Pick where the answer comes from. "I don\'t know yet" is a fine answer.';return}go(st+1)};
+    return;
+  }
+  if(st===RUNGS.length+1){
+    app.innerHTML='<section class="card">'+progress()+'<p class="step-k">Follow-up 1 of 2</p><h2>How fresh is your evidence?</h2><p class="shows">An investor will ask when you last checked.</p>'+
+    radio('recent','When did you last talk to, or watch, someone who has this problem?',[["week","This week"],["month","In the last month"],["quarter","In the last 6 months"],["old","More than 6 months ago, or never"]],state.fu.recent)+
+    radio('count','How many different people with the problem have you spoken to?',[["few","Fewer than 5"],["some","5 to 19"],["many","20 or more"]],state.fu.count)+
+    '<div class="err" id="err"></div><div class="nav"><button class="btn ghost" id="back">Back</button><button class="btn primary" id="next">Next</button></div></section>';
+    bindRadios();
+    document.getElementById('back').onclick=()=>go(st-1);
+    document.getElementById('next').onclick=()=>{const r=val('recent'),c=val('count');if(!r||!c){document.getElementById('err').textContent='Answer both.';return}state.fu.recent=r;state.fu.count=c;go(st+1)};
+    return;
+  }
+  if(st===RUNGS.length+2){
+    const pre=compute(),b=pre.breakAt;
+    const rn=b===null?null:RUNGS[b];
+    app.innerHTML='<section class="card">'+progress()+'<p class="step-k">Follow-up 2 of 2</p><h2>'+(rn?'Your ladder breaks at rung '+(b+1)+': '+rn.n:'You made it to the top')+'</h2>'+
+    '<p class="shows">'+(rn?'Be honest about why. It decides your next step.':'One last check before your result.')+'</p>'+
+    radio('fix',rn?'What is really stopping you at "'+rn.n+'"?':'Could a stranger verify every rung from what you can show today?',
+      rn?[["time","I have not made the time to go and find out"],["access","I can't get access to the people who have it"],["unsure","I'm not sure what good evidence looks like here"],["think","I think I know, I just have not proven it"]]
+        :[["yes","Yes, I could show the notes, files and people"],["mostly","Mostly, some of it lives in my head"]],state.fu.fix)+
+    '<div class="err" id="err"></div><div class="nav"><button class="btn ghost" id="back">Back</button><button class="btn beam" id="next">See my score</button></div></section>';
+    bindRadios();
+    document.getElementById('back').onclick=()=>go(st-1);
+    document.getElementById('next').onclick=()=>{const f=val('fix');if(!f){document.getElementById('err').textContent='Pick the closest one.';return}state.fu.fix=f;go(st+1)};
+    return;
+  }
+  result();
+}
+function radio(name,q,opts,cur){return '<p class="q" style="margin-top:18px">'+q+'</p><div class="opts">'+opts.map(o=>'<label class="opt'+(cur===o[0]?' sel':'')+'"><input type="radio" name="'+name+'" value="'+o[0]+'"'+(cur===o[0]?' checked':'')+'><span><b>'+o[1]+'</b></span></label>').join('')+'</div>'}
+function bindRadios(){app.querySelectorAll('.opt input').forEach(inp=>inp.onchange=()=>{inp.closest('.opts').querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));inp.closest('.opt').classList.add('sel')})}
+function val(n){const e=app.querySelector('input[name="'+n+'"]:checked');return e?e.value:""}
+function save(i){state.answers[i].text=document.getElementById('t').value.trim();state.answers[i].ev=val('ev')}
+function go(s){state.step=s;render();document.getElementById(s===0?'intro':'app').scrollIntoView({behavior:'smooth',block:'start'})}
+const BLOCK={time:"You know where the evidence is. You have not gone to get it. That is the most common reason a ladder breaks, and the easiest to fix this week.",
+ access:"If you can't reach the people who have the problem, that is the finding. Either the market is the wrong one, or your first job is distribution, not product.",
+ unsure:"Good evidence is anything a stranger could check: a note from a conversation, a file you read, a number someone said out loud. Your opinion of it does not count yet.",
+ think:"Knowing is not the same as proving. Investors fund what you can show, not what you believe. Turn the belief into one piece of first-hand evidence.",
+ yes:"Then put it in your deck exactly the way you would show it. Most founders who reach the top still bury it on slide nine.",
+ mostly:"Write down what lives in your head before you pitch. If it is not on paper, an investor will score it as a claim."};
+function result(){
+  const {score,breakAt,notes}=compute();
+  const labels=["No rung proven yet","Symptom","First derivative","Second derivative","Third derivative","Community"];
+  const line=score===5?"You know the problem better than almost anyone pitching it. Prove it on the slide.":score>=3?"You are past the point where most pre-seed founders stop. The next rung is where the category gets decided.":score>=1?"You can name the pain. You can't yet explain why it exists. That is where most decks stop, and where most passes start.":"Right now this is an idea about a problem, not evidence of one. That is fixable in two weeks.";
+  const rows=RUNGS.map((r,i)=>{const w=rungScore(i);let cls,txt;if(i<score){cls='pass';txt='proven'}else if(w>=1&&state.answers[i].text.trim()){cls='claim';txt='claimed'}else{cls='none';txt='open'}return '<li class="'+(i===breakAt?'break':'')+'"><span class="num">0'+(i+1)+'</span><span>'+r.n+'</span><span class="st '+cls+'">'+txt+'</span></li>'}).join('');
+  const br=breakAt===null?null:RUNGS[breakAt];
+  const nextHtml=br?'<section class="card next"><p class="step-k">Your next step: rung '+(breakAt+1)+'</p><h3>'+br.n+'</h3><p class="verdict" style="color:var(--ink-2);margin-bottom:14px">'+BLOCK[state.fu.fix]+'</p><ol>'+br.fix.map(f=>'<li>'+f+'</li>').join('')+'</ol>'+
+   '<div class="compare" style="margin-top:18px"><div><b>Your answer</b>'+(esc(state.answers[breakAt].text)||'<i>Left blank.</i>')+'</div><div><b>What a 5 sounds like</b>'+br.five+'</div></div></section>'
+   :'<section class="card next"><p class="step-k">Your next step</p><h3>Put the proof on the slide</h3><p class="verdict" style="color:var(--ink-2)">'+BLOCK[state.fu.fix]+'</p></section>';
+  const prompt=buildPrompt(score,breakAt);
+  app.innerHTML=
+   '<section class="card"><p class="step-k">Your score</p><div class="score"><div class="n">'+score+'<small>/5</small></div><div class="lbl"><b>'+labels[score]+'</b><span>Highest rung you can prove with first-hand evidence</span></div></div>'+
+   '<p class="verdict" style="margin-top:20px">'+line+'</p>'+(notes.length?'<p style="color:var(--warn);margin:12px 0 0;font-size:15px">'+notes.join(' ')+'</p>':'')+
+   '<ul class="rungs">'+rows+'</ul></section>'+
+   nextHtml+
+   '<section class="card prompt"><p class="step-k">Keep going with your own AI</p><h3 style="font-size:1.5rem;font-weight:400">Take this prompt to ChatGPT, Claude or Gemini</h3><p style="color:var(--ink-2);margin:8px 0 0">It carries your answers and your score, and turns your AI into a skeptical pre-seed investor who interviews you one rung at a time.</p>'+
+   '<pre id="prompt">'+esc(prompt)+'</pre><div class="row"><button class="btn primary" id="copy">Copy prompt</button><span class="copied" id="copied" aria-live="polite"></span></div></section>'+
+   '<div class="cta">'+
+     '<section class="card tear"><p class="step-k">The Teardown</p><h3>Want the read on yours?</h3><p class="body">Your deck, your numbers or your hardest call, taken apart live. Verdict in 30 seconds, then the math, then the one move that matters this week.</p><span class="price"><b>$375</b> / hour</span><a class="btn beam" href="https://cal.com/tmaleh/teardown">Book a teardown</a></section>'+
+     '<section class="card"><p class="step-k">The Pattern Recognizer</p><h3>One pattern, every Friday</h3><p class="body">What investors see that founders miss, from hundreds of pre-seed reviews. Patterns, never names.</p><div class="bh-form" id="bh"></div></section>'+
+   '</div>'+
+   '<p class="private">Nothing you typed left your browser. Refresh the page and it is gone.</p>'+
+   '<div class="nav"><button class="btn ghost" id="again">Start over</button><a class="btn ghost" href="/">tmaleh.com</a></div>';
+  document.getElementById('copy').onclick=async()=>{const t=document.getElementById('prompt').textContent;try{await navigator.clipboard.writeText(t);document.getElementById('copied').textContent='Copied. Paste it into your AI.'}catch(e){const r=document.createRange();r.selectNodeContents(document.getElementById('prompt'));const s=getSelection();s.removeAllRanges();s.addRange(r);document.getElementById('copied').textContent='Selected. Press Cmd+C to copy.'}};
+  document.getElementById('again').onclick=()=>{location.reload()};
+  const s=document.createElement('script');s.async=true;s.src='https://subscribe-forms.beehiiv.com/v3/loader.js';s.setAttribute('data-beehiiv-form','f4ae20f7-06b6-4c4e-a13f-b612d583945b');document.getElementById('bh').appendChild(s);
+  window.scrollTo({top:document.getElementById('app').offsetTop-20,behavior:'smooth'});
+}
+function buildPrompt(score,breakAt){
+  const ev=v=>(EVIDENCE.find(e=>e.v===v)||{t:'not answered'}).t;
+  const lines=RUNGS.map((r,i)=>'Rung '+(i+1)+' '+r.n+' ('+r.shows+')\nQuestion: '+r.q+'\nMy answer: '+(state.answers[i].text||'(blank)')+'\nSource: '+ev(state.answers[i].ev)).join('\n\n');
+  const target=breakAt===null?'all five rungs':'rung '+(breakAt+1)+', '+RUNGS[breakAt].n;
+  return 'Act as a skeptical pre-seed investor who scores founders with the Problem Depth Ladder, built by Taissa Maleh (tmaleh.com/ladder).\n\n'+
+'The Ladder has five rungs. Each rung needs the one below it. A report, article, citation or smart framing is never evidence. A conversation, a dataset the founder built, or a behaviour they watched is. The question at every rung: what did you learn that you could not have learned from a desk?\n'+
+'1 Symptom: the pain and exactly who has it.\n2 First derivative: what is changing, and how fast.\n3 Second derivative: why it is changing, with evidence gathered first-hand.\n4 Third derivative: the root cause in human terms (incentives, fear, status, trust, habit), which holds even if the technology gets ten times cheaper.\n5 Community: people who share the belief are already gathering around the founder.\n\n'+
+'My company: '+state.company+'\nWho has the problem: '+state.who+'\n\n'+lines+'\n\n'+
+'Last time I spoke to someone with the problem: '+({week:'this week',month:'in the last month',quarter:'in the last 6 months',old:'more than 6 months ago, or never'}[state.fu.recent]||'')+'\nPeople with the problem I have spoken to: '+({few:'fewer than 5',some:'5 to 19',many:'20 or more'}[state.fu.count]||'')+'\n'+
+'My self-score: '+score+'/5. My ladder breaks at: '+target+'.\n\n'+
+'What I want from you:\n1. Re-score me rung by rung. Be stricter than I was. Mark each rung proven, claimed or open, and say why in one line.\n2. Interview me one question at a time, starting at the lowest rung that is not proven. Do not move up until I give you evidence a stranger could check. Push back on anything that sounds like a report or an opinion.\n3. When we hit a gap, give me a field plan for the next 14 days: who to talk to, what to ask word for word, and what to count.\n4. Finish with the one sentence I should put on my problem slide, at the highest rung I have actually proven.\n\nStart with question 1. Ask one question at a time and wait for my answer.';
+}
+render();
+</script>
+</body>
+</html>

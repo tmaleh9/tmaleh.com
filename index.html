@@ -313,8 +313,14 @@ footer a{text-decoration:none} footer a:hover{color:var(--ink)}
 .nav .mark{font-family:"Archivo","Helvetica Neue",Arial,sans-serif;font-stretch:125%;font-weight:800;letter-spacing:-.04em;display:inline-flex;align-items:baseline}
 .nav .mark .dot{display:inline-block;width:.24em;height:.24em;border-radius:50%;background:#3d7bff;margin-left:.08em}
 
-/* beehiiv form */
-.bh-form{margin-left:-24px;margin-top:-8px}
+/* newsletter band */
+.letter{display:grid;grid-template-columns:1fr minmax(0,440px);align-items:center;gap:20px 48px;padding:clamp(24px,4vw,40px) clamp(24px,4vw,44px);border-radius:var(--radius);border:1px solid var(--line);background:var(--paper)}
+.letter-copy{min-width:0}
+.letter h2{font-size:clamp(1.7rem,3vw,2.4rem);margin-bottom:10px}
+.letter-copy p:last-child{color:var(--ink-2);margin:0}
+.bh-form{min-width:0}
+.bh-form iframe{display:block}
+@media (max-width:860px){ .letter{grid-template-columns:1fr} }
 </style>
 </head>
 <body>
@@ -430,21 +436,15 @@ footer a{text-decoration:none} footer a:hover{color:var(--ink)}
   </div>
 </section>
 
-<section class="section wrap" id="letter" aria-label="Newsletter and companies" style="padding-top:0">
-  <div class="duo">
-    <div class="panel">
+<section class="section wrap" id="letter" aria-label="Newsletter" style="padding-top:0">
+  <div class="letter">
+    <div class="letter-copy">
       <p class="eyebrow">Every Friday</p>
       <h2>The Pattern Recognizer</h2>
       <p>What investors see that founders miss. One pattern, every Friday.</p>
-      <div class="bh-form"><script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="f4ae20f7-06b6-4c4e-a13f-b612d583945b"></script></div>
-      <script type="text/javascript" async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
     </div>
-    <div class="panel dark">
-      <p class="eyebrow">For companies</p>
-      <h2>AI operations</h2>
-      <p>I lead AI operations for companies that treat AI as infrastructure. Systems that make the whole team faster, built and run with you.</p>
-      <span class="email">hello@tmaleh.com</span>
-    </div>
+    <div class="bh-form"><script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="f4ae20f7-06b6-4c4e-a13f-b612d583945b"></script></div>
+    <script type="text/javascript" async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
   </div>
 </section>
 

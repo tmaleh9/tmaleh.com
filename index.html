@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Taissa Maleh</title>
+<meta name="description" content="Investor, operator and founder coach. Proof beats permission. Let's build yours.">
+<link rel="canonical" href="https://tmaleh.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tmaleh.com/">
+<meta property="og:title" content="Taissa Maleh">
+<meta property="og:description" content="Proof beats permission. Let's build yours.">
+<meta property="og:image" content="https://tmaleh.com/photos/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@tmaleh9">
+<meta name="theme-color" content="#eceef2">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>html{color-scheme:light}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,800&family=Geist:wght@200;300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: pale field up top, a sticky depth scan that ends in a black-out reveal, an ink "about" band, then light again for the offer and gallery. */
+:root{
+  --field:#eceef2; --paper:#f7f8fa; --ink:#111318; --ink-2:#5b606c; --line:#d3d7df;
+  --deep:#05070f; --beam:#3d7bff; --on-deep:#f1f3f7;
+  --tag:#111318; --tag-fg:#f7f8fa;
+  --f-display:"Geist","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Geist","Helvetica Neue",Arial,sans-serif;
+  --f-mono:"Geist Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  --s-1:clamp(3.4rem,9.5vw,8rem); --s-2:clamp(2rem,4.6vw,3.6rem); --s-3:clamp(1.25rem,2vw,1.5rem);
+  --s-body:1.0625rem; --s-small:.8125rem; --radius:28px;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --field:#0e1015; --paper:#171a21; --ink:#eef0f4; --ink-2:#9aa0ad; --line:#2a2e38;
+  --deep:#020309; --beam:#6b9bff; --tag:#eef0f4; --tag-fg:#0e1015; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --field:#0e1015; --paper:#171a21; --ink:#eef0f4; --ink-2:#9aa0ad; --line:#2a2e38;
+  --deep:#020309; --beam:#6b9bff; --tag:#eef0f4; --tag-fg:#0e1015; color-scheme:dark }
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--field);color:var(--ink);font-family:var(--f-body);font-size:var(--s-body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--beam);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.mono{font-family:var(--f-mono);font-size:var(--s-small);letter-spacing:.02em}
+.eyebrow{font-family:var(--f-mono);font-size:var(--s-small);color:var(--ink-2);text-transform:uppercase;letter-spacing:.1em;margin:0 0 14px}
+h1,h2,h3{font-family:var(--f-display);font-weight:300;letter-spacing:-.04em;line-height:1;margin:0;text-wrap:balance}
+.confirm{font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:.02em;background:color-mix(in srgb,var(--beam) 16%,transparent);color:var(--beam);padding:.15em .5em;border-radius:5px;white-space:nowrap;vertical-align:middle}
+.hl{color:var(--beam)}
+.mockbar{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:8px max(16px,env(safe-area-inset-right,0px)) calc(8px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));text-align:center;background:var(--ink);color:var(--field);font-family:var(--f-mono);font-size:12px}
+
+/* nav */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--field)}
+.nav{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:20;display:flex;align-items:center;gap:4px;padding:5px;background:#111318;color:#f1f3f7;border-radius:999px;box-shadow:0 8px 30px rgb(0 0 0 / .22);max-width:calc(100vw - 32px)}
+.nav .mark{font-family:var(--f-display);font-weight:600;padding:6px 12px 6px 14px;text-decoration:none;letter-spacing:-.03em}
+.nav a.link{font-size:14px;padding:7px 12px;border-radius:999px;text-decoration:none;color:rgb(241 243 247 / .6);transition:color .2s,background .2s}
+.nav a.link.on{color:#f1f3f7;background:rgb(241 243 247 / .14)}
+.nav a.cta{font-size:14px;font-weight:500;padding:7px 14px;border-radius:999px;background:#f1f3f7;color:#111318;text-decoration:none;white-space:nowrap}
+@media (max-width:640px){ .nav a.link{display:none} }
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,5vw,72px);align-items:center;padding-block:clamp(120px,17vh,160px) 90px}
+.hero > div{min-width:0}
+.hero h1{font-family:"Archivo","Helvetica Neue",Arial,sans-serif;font-stretch:125%;font-weight:800;font-size:clamp(3rem,7.6vw,6.6rem);letter-spacing:-.045em;line-height:.92;text-transform:uppercase}
+.hero .line{font-family:var(--f-display);font-weight:500;font-size:clamp(1.5rem,3.6vw,3.1rem);letter-spacing:-.04em;line-height:1.02;margin:26px 0 36px}
+.hero .line b{font-weight:500;white-space:nowrap}
+.hero .line span{display:block;font-weight:200}
+.btns{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:500;font-size:15px;text-decoration:none;border:1px solid var(--ink);cursor:pointer;font-family:inherit}
+.btn.primary{background:var(--ink);color:var(--field)}
+.btn.ghost{color:var(--ink);border-color:var(--line);background:var(--paper)}
+.btn.beam{background:var(--beam);border-color:var(--beam);color:#fff}
+.ph-badges{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;margin-top:28px}
+.ph-badges img{filter:grayscale(1) contrast(1.05);transition:filter .25s}
+.ph-badges a:hover img{filter:none}
+.ph-top img{display:block;height:46px;width:auto;max-width:100%}
+.ph-profile{display:flex;gap:6px;align-items:center}
+.ph-profile img{display:block;width:40px;height:auto}
+.portrait{position:relative;justify-self:end;width:min(100%,420px)}
+.frame{position:relative;aspect-ratio:3/4;max-width:100%;border-radius:22px;overflow:hidden;background:
+  repeating-linear-gradient(135deg, color-mix(in srgb,var(--ink) 5%,transparent) 0 1px, transparent 1px 12px), var(--paper);
+  border:1px solid var(--line);display:grid;place-items:center;text-align:center;color:var(--ink-2);font-family:var(--f-mono);font-size:12px}
+.frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.frame::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgb(0 0 0 / .06);border-radius:inherit}
+.callouts{position:absolute;inset:0;pointer-events:none}
+.callout{position:absolute;display:flex;align-items:center;gap:0;font-family:var(--f-mono);font-size:13px}
+.callout b{font-weight:500;background:var(--ink);color:var(--field);padding:7px 12px;border-radius:8px;white-space:nowrap}
+.callout i{display:block;width:44px;height:1px;background:var(--ink)}
+.callout i::after{content:"";display:block;width:7px;height:7px;border-radius:50%;background:var(--beam);margin:-3px 0 0 auto;box-shadow:0 0 10px var(--beam)}
+.callout.c1{top:14%;left:-26%}
+.callout.c2{top:44%;left:-34%}
+.callout.c3{top:74%;left:-22%}
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .ph-badge{display:inline-flex;align-items:center;gap:14px;margin-top:28px;text-decoration:none;font-family:var(--f-mono);font-size:12px;line-height:1.5;color:var(--ink-2)}
+.ph-badge img{display:block;height:46px;width:auto;max-width:100%}
+.ph-badge:hover span{color:var(--ink)}
+.portrait{justify-self:start;width:min(100%,360px);margin-left:0}
+  .callout{position:static;margin-bottom:8px} .callout i{display:none}
+  .callouts{position:static;display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+}
+
+/* depth scan */
+.scan{position:relative;height:600vh}
+.scan .stage{position:sticky;top:0;height:100vh;overflow:hidden;--d:0;
+  background:color-mix(in srgb,var(--deep) clamp(0%,calc(var(--d) * 100%),100%),var(--field));
+  color:color-mix(in srgb,var(--on-deep) clamp(0%,calc(var(--d) * 150%),100%),var(--ink))}
+.scan .inner{height:100%;display:grid;grid-template-columns:1fr minmax(120px,220px) 1fr;align-items:center;gap:clamp(16px,4vw,56px);transition:opacity .4s,transform .6s cubic-bezier(.2,.7,0,1)}
+.scan .head{position:absolute;top:calc(84px + env(safe-area-inset-top,0px));left:0;right:0}
+.scan .head .eyebrow{color:inherit;opacity:.65}
+.scan .head h2{font-size:var(--s-3);font-weight:400;letter-spacing:-.01em;opacity:.9}
+.ladder{grid-column:2;position:relative;height:62vh;width:100%;transition:transform .7s cubic-bezier(.2,.7,0,1)}
+.ladder .rail{position:absolute;top:0;bottom:0;width:2px;background:currentColor;opacity:.25;transition:transform .7s cubic-bezier(.2,.7,0,1)}
+.ladder .rail.l{left:18%} .ladder .rail.r{right:18%}
+.ladder .rung{position:absolute;left:18%;right:18%;height:2px;background:currentColor;opacity:.25;transition:opacity .3s,background .3s}
+.ladder .rung.on{opacity:1;background:var(--beam);box-shadow:0 0 18px var(--beam)}
+.ladder .rung span{position:absolute;left:calc(100% + 12px);top:-.7em;font-family:var(--f-mono);font-size:12px;opacity:.7}
+.beam{position:absolute;left:4%;right:4%;height:70px;margin-top:-35px;background:linear-gradient(to bottom,transparent,color-mix(in srgb,var(--beam) 45%,transparent) 50%,transparent);border-top:1px solid color-mix(in srgb,var(--beam) 80%,transparent);pointer-events:none}
+.counter{position:absolute;left:50%;bottom:calc(-1 * clamp(44px,7vh,64px));transform:translateX(-50%);font-family:var(--f-mono);font-size:14px;letter-spacing:.12em;padding:6px 12px;border:1px solid currentColor;border-radius:8px;opacity:.85;white-space:nowrap;font-variant-numeric:tabular-nums}
+.cards{position:relative;min-height:230px}
+.cards.left{grid-column:1;justify-self:end;width:min(100%,390px)}
+.cards.right{grid-column:3;justify-self:start;width:min(100%,390px)}
+.card{position:absolute;inset:0 auto auto 0;width:100%;padding:20px 22px;border-radius:16px;border:1px solid color-mix(in srgb,currentColor 30%,transparent);background:color-mix(in srgb,currentColor 6%,transparent);backdrop-filter:blur(6px);opacity:0;transform:translateY(12px);transition:opacity .35s,transform .35s}
+.card.on{opacity:1;transform:none}
+.card .k{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.7}
+.card h3{font-size:1.65rem;font-weight:400;margin:6px 0 8px}
+.card p{margin:0;opacity:.85}
+.card q{display:block;margin-top:4px;font-family:var(--f-display);font-size:1.2rem;line-height:1.35;quotes:none}
+/* the reveal */
+.flash{position:absolute;inset:0;background:var(--beam);opacity:0;pointer-events:none}
+.stage.done .flash{animation:flash .9s ease-out 1}
+@keyframes flash{0%{opacity:0}12%{opacity:.85}100%{opacity:0}}
+.stage.done .inner{opacity:0;transform:scale(1.35)}
+.stage.done .rail.l{transform:translateX(-60vw)} .stage.done .rail.r{transform:translateX(60vw)}
+.final{position:absolute;inset:0;display:grid;place-items:center;padding:0 max(16px,env(safe-area-inset-left,0px));pointer-events:none}
+.final .eyebrow{color:var(--beam);opacity:0;transition:opacity .4s .2s;text-align:center}
+.final .big{font-family:var(--f-display);font-weight:600;font-size:clamp(2.6rem,8.5vw,7.4rem);letter-spacing:-.055em;line-height:.95;max-width:12ch;margin:0 auto;text-align:center;color:var(--on-deep)}
+.final .w{display:inline-block;opacity:0;transform:translateY(40%) scale(1.08);filter:blur(8px);transition:opacity .45s,transform .6s cubic-bezier(.2,.7,0,1),filter .5s}
+.final .w.beamw{color:var(--beam)}
+.stage.done .final .eyebrow{opacity:1}
+.stage.done .final .w{opacity:1;transform:none;filter:none}
+
+/* stacked fallback */
+.stack{display:none}
+@media (max-width:760px),(prefers-reduced-motion: reduce){
+  .scan{height:auto} .scan .stage{display:none}
+  .stack{display:block;padding-block:72px 90px;background:linear-gradient(to bottom,var(--field),var(--deep) 70%);color:var(--on-deep)}
+  .stack h2{font-size:var(--s-3);font-weight:400;color:var(--ink);margin-bottom:28px}
+  .stack ol{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+  .stack li{padding:18px 20px;border-radius:16px;border:1px solid rgb(255 255 255 / .18);background:rgb(255 255 255 / .06)}
+  .stack li:nth-child(-n+2){color:var(--ink);border-color:var(--line);background:var(--paper)}
+  .stack .k{font-family:var(--f-mono);font-size:12px;text-transform:uppercase;letter-spacing:.08em;opacity:.7}
+  .stack h3{font-size:1.4rem;font-weight:400;margin:4px 0 6px}
+  .stack p{margin:0;opacity:.9}
+  .stack .big{margin-top:56px;font-family:var(--f-display);font-weight:600;font-size:clamp(2.4rem,11vw,3.6rem);letter-spacing:-.05em;line-height:.98}
+}
+
+/* about band */
+.about{background:var(--deep);color:var(--on-deep);padding-block:clamp(80px,14vh,150px)}
+.about .eyebrow{color:var(--beam)}
+.about .lead{font-family:var(--f-display);font-weight:300;font-size:clamp(1.7rem,3.6vw,2.9rem);letter-spacing:-.035em;line-height:1.12;max-width:24ch;margin:0 0 28px;text-wrap:balance}
+.about .lead b{font-weight:600}
+.about .body{max-width:60ch;color:rgb(241 243 247 / .72);font-size:1.2rem;margin:0}
+.rules{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rule{padding:24px;border-radius:18px;border:1px solid rgb(241 243 247 / .16);background:rgb(241 243 247 / .04);min-width:0}
+.rule .k{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--beam)}
+.rule h3{font-size:1.7rem;font-weight:400;margin:10px 0 8px}
+.rule p{margin:0;color:rgb(241 243 247 / .68)}
+.marquee{margin-top:clamp(48px,8vh,80px);border-block:1px solid rgb(241 243 247 / .14);overflow:hidden;white-space:nowrap}
+.marquee .track{display:inline-block;padding-block:18px;animation:mq 38s linear infinite;font-family:var(--f-mono);font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:rgb(241 243 247 / .7)}
+.marquee .track span{margin:0 28px}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){ .marquee .track{animation:none} }
+@media (max-width:860px){ .rules{grid-template-columns:1fr} }
+
+/* sections */
+.section{padding-block:clamp(80px,12vh,140px)}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:18px;margin-bottom:36px}
+.sec-head h2{font-size:var(--s-2)}
+.sec-head p{margin:0;color:var(--ink-2);max-width:40ch}
+
+/* for / not for */
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:20px;border-radius:22px;overflow:hidden;border:1px solid var(--ink)}
+.fit div{padding:clamp(24px,4vw,40px);min-width:0}
+.fit .yes{background:var(--ink);color:var(--field)}
+.fit .no{background:var(--paper);color:var(--ink)}
+.fit b{font-family:var(--f-mono);font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:14px}
+.fit .yes b{color:var(--beam)}
+.fit p{margin:0;font-family:var(--f-display);font-size:clamp(1.5rem,2.8vw,2.2rem);letter-spacing:-.035em;line-height:1.08;font-weight:500}
+.fit .no p{font-weight:300;text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:color-mix(in srgb,var(--ink) 45%,transparent)}
+@media (max-width:760px){ .fit{grid-template-columns:1fr} }
+
+.offers{display:grid;grid-template-columns:repeat(3,1fr);column-gap:14px;row-gap:0}
+.offer{display:grid;grid-row:span 5;grid-template-rows:subgrid;row-gap:10px;padding:22px 22px 18px;border-radius:20px;background:var(--paper);border:1px solid var(--line);min-width:0;margin-bottom:14px}
+.offer.feature{border-color:var(--ink);box-shadow:0 0 0 1px var(--ink)}
+.offer .tagline{justify-self:start;align-self:start;transform:rotate(-2deg);background:var(--tag);color:var(--tag-fg);font-family:var(--f-mono);font-size:12px;padding:4px 9px;border-radius:5px}
+.offer h3{font-size:1.75rem;font-weight:400}
+.offer .hook{font-family:var(--f-display);font-weight:500;font-size:1.15rem;letter-spacing:-.02em;line-height:1.3;margin:0}
+.offer p{margin:0;color:var(--ink-2)}
+.offer .grow{align-self:start}
+.price-note{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 20px;margin-top:2px;padding:14px 20px;border-radius:14px;background:var(--ink);color:var(--field);font-family:var(--f-mono);font-size:13px}
+.price-note b{color:var(--beam);font-weight:500;text-transform:uppercase;letter-spacing:.08em;margin-right:10px}
+.price-note a{color:var(--field);font-weight:500}
+.offer .price{align-self:end;font-family:var(--f-mono);font-size:14px;border-top:1px solid var(--line);padding-top:12px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.offer .price a{font-weight:500}
+@media (max-width:960px){ .offers{grid-template-columns:1fr} }
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,18vw,220px);gap:12px}
+.ph{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:
+  repeating-linear-gradient(135deg,color-mix(in srgb,var(--ink) 5%,transparent) 0 1px,transparent 1px 12px),var(--paper);min-width:0}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,0,1)}
+.ph:hover img{transform:scale(1.04)}
+.ph::before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgb(0 0 0 / .45),transparent 45%);z-index:1}
+.ph figcaption{z-index:2;position:absolute;left:12px;bottom:12px;right:12px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:center;font-family:var(--f-mono);font-size:12px}
+.ph figcaption b{font-weight:500;background:var(--ink);color:var(--field);padding:4px 8px;border-radius:5px}
+.ph.tall{grid-row:span 2} .ph.wide{grid-column:span 2} .ph.full{grid-column:1 / -1;grid-row:span 2}
+@media (max-width:760px){ .gallery{grid-template-columns:1fr 1fr} .ph.wide{grid-column:span 2} .ph.full{grid-row:span 1} }
+.seen{display:flex;align-items:center;gap:20px;margin:0 0 28px;padding:18px 0;border-block:1px solid var(--line);overflow:hidden}
+.seen-k{flex:none;font-family:var(--f-mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+.seen-viewport{flex:1;min-width:0;overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent)}
+.seen-track{display:flex;width:max-content;gap:56px;animation:roll 40s linear infinite}
+.seen:hover .seen-track{animation-play-state:paused}
+.seen-track span{font-family:var(--f-display);font-weight:600;font-size:clamp(1.25rem,2.2vw,1.7rem);letter-spacing:-.035em;color:var(--ink-2);white-space:nowrap;transition:color .2s}
+.seen-track span:hover{color:var(--ink)}
+@keyframes roll{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){ .seen-track{animation:none;flex-wrap:wrap;width:auto;gap:12px 28px} }
+.quotes{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.quote{margin:0;padding:clamp(22px,3vw,32px);border-radius:22px;background:var(--paper);border:1px solid var(--line);display:flex;flex-direction:column;gap:18px;min-width:0}
+.quote.ink{background:var(--ink);color:var(--field);border-color:var(--ink)}
+.quote blockquote{margin:0;font-family:var(--f-display);font-size:clamp(1.25rem,2.2vw,1.6rem);letter-spacing:-.025em;line-height:1.25;font-weight:400}
+.quote blockquote::before{content:"\201C";display:block;font-size:3rem;line-height:.6;color:var(--beam);margin-bottom:10px}
+.quote figcaption{font-family:var(--f-mono);font-size:12px;letter-spacing:.02em;opacity:.75;margin-top:auto}
+.quote figcaption b{font-weight:500;display:block;font-size:13px;opacity:1}
+@media (max-width:760px){ .quotes{grid-template-columns:1fr} }
+
+/* letter + companies */
+.duo{display:grid;grid-template-columns:1.4fr 1fr;gap:16px}
+.panel{padding:clamp(24px,4vw,44px);border-radius:var(--radius);border:1px solid var(--line);background:var(--paper);min-width:0}
+.panel h2{font-size:clamp(1.7rem,3vw,2.4rem);margin-bottom:12px}
+.panel p{color:var(--ink-2);margin:0 0 20px}
+.signup{display:flex;gap:8px;flex-wrap:wrap}
+.signup input{flex:1;min-width:0;padding:12px 16px;border-radius:999px;border:1px solid var(--line);background:var(--field);color:var(--ink);font:inherit}
+.note{font-family:var(--f-mono);font-size:12px;color:var(--ink-2);margin-top:10px;min-height:1em}
+.panel.dark{background:var(--ink);color:var(--field);border-color:var(--ink)}
+.panel.dark .eyebrow{color:var(--beam)}
+.panel.dark p{color:color-mix(in srgb,var(--field) 70%,transparent)}
+.email{font-family:var(--f-mono);user-select:all}
+@media (max-width:860px){ .duo{grid-template-columns:1fr} }
+
+/* closing */
+.closing{text-align:center;padding-block:clamp(80px,12vh,140px)}
+.closing h2{font-size:var(--s-2);max-width:22ch;margin:0 auto 16px}
+.closing p{color:var(--ink-2);font-size:1.15rem;margin:0 auto 28px;max-width:36ch}
+.closing .btns{justify-content:center}
+footer{padding-block:40px 90px;border-top:1px solid var(--line);color:var(--ink-2)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+footer nav{display:flex;flex-wrap:wrap;gap:18px}
+footer a{text-decoration:none} footer a:hover{color:var(--ink)}
+</style>
+</head>
+<body>
+
+
+<nav class="nav" aria-label="Main">
+  <a class="mark" href="#top">tmaleh</a>
+  <a class="link" href="#method" data-sec="method">Method</a>
+  <a class="link" href="#work" data-sec="work">Work with me</a>
+  <a class="link" href="#letter" data-sec="letter">Letter</a>
+  <a class="cta" href="#work">Book a teardown</a>
+</nav>
+
+<header class="hero wrap" id="top">
+  <div>
+    <h1>Taissa Maleh</h1>
+    <p class="line"><b>Proof beats permission.</b> <span>Let's build yours.</span></p>
+    <div class="btns">
+      <a class="btn primary" href="#work">Book a teardown</a>
+      <a class="btn ghost" href="#method">See how I read a company</a>
+    </div>
+    <div class="ph-badges">
+      <a class="ph-top" href="https://www.producthunt.com/products/1752vc-pitch-deck-analysis" target="_blank" rel="noopener"><img src="badges/ph-top-dark.svg" alt="#1 Product of the Day on Product Hunt" width="250" height="54"></a>
+      <a class="ph-profile" href="https://www.producthunt.com/@tmaleh_" target="_blank" rel="noopener" aria-label="Taissa Maleh's Product Hunt badges">
+        <img src="badges/ph-top5.png" alt="Top 5 Launch" title="Top 5 Launch" width="44" height="47">
+        <img src="badges/ph-tastemaker.png" alt="Tastemaker" title="Tastemaker" width="44" height="47">
+        <img src="badges/ph-tastemaker10.png" alt="Tastemaker 10" title="Tastemaker 10" width="44" height="47">
+        <img src="badges/ph-tastemaker5.png" alt="Tastemaker 5" title="Tastemaker 5" width="44" height="47">
+      </a>
+    </div>
+  </div>
+  <div class="portrait">
+    <div class="frame"><img src="photos/hero.jpg" alt="Taissa Maleh in a Bluefin Foods t-shirt" width="960" height="1280"></div>
+    <div class="callouts" aria-label="Roles">
+      <div class="callout c1"><b>// investor</b><i></i></div>
+      <div class="callout c2"><b>// operator</b><i></i></div>
+      <div class="callout c3"><b>// founder coach</b><i></i></div>
+    </div>
+  </div>
+</header>
+
+<section class="scan" id="method" aria-label="The Problem Depth Ladder">
+  <div class="stage" id="stage">
+    <div class="wrap inner" id="inner">
+      <div class="head wrap"><p class="eyebrow">The Problem Depth Ladder</p><h2>How I read a company. Scroll to go deeper.</h2></div>
+      <div class="cards left" id="cardsL"></div>
+      <div class="ladder" id="ladder">
+        <div class="rail l"></div><div class="rail r"></div>
+        <div class="beam" id="beam"></div>
+        <div class="counter" id="counter">RUNG 1 / 5</div>
+      </div>
+      <div class="cards right" id="cardsR"></div>
+    </div>
+    <div class="flash"></div>
+    <div class="final" id="final">
+      <div>
+        <p class="eyebrow">Five rungs. One rule.</p>
+        <p class="big" id="big"></p>
+      </div>
+    </div>
+  </div>
+  <div class="stack wrap"><h2>How I read a company: the Problem Depth Ladder</h2><ol id="stackList"></ol><p class="big">The deck doesn't win. <span class="hl">Depth does.</span></p></div>
+</section>
+
+<section class="section wrap" id="work" aria-label="Work with me">
+  <div class="sec-head">
+    <h2>Work with me</h2>
+    <p>Three ways in. All of them start with the problem, not your product.</p>
+  </div>
+  <div class="fit">
+    <div class="yes"><b>This is for you if</b><p>You shipped something this month that nobody approved.</p></div>
+    <div class="no"><b>This is not for you if</b><p>You're waiting for a check, a cofounder or a sign.</p></div>
+  </div>
+  <div class="offers">
+    <article class="offer">
+      <span class="tagline">self-paced</span>
+      <h3>The Proof Academy</h3>
+      <p class="hook">Everything I teach founders about proving demand, pitching and raising, in one place.</p>
+      <p class="grow">Built from hundreds of pre-seed reviews and the questions investors actually ask. Work through it at your own pace, before an investor runs it on you.</p>
+      <div class="price"><span><b>$57</b> / month</span><a href="mailto:hello@tmaleh.com?subject=Proof%20Academy%20early%20access">Get early access</a></div>
+    </article>
+    <article class="offer feature">
+      <span class="tagline">live, by the hour</span>
+      <h3>The Teardown</h3>
+      <p class="hook">Your deck, your numbers or your hardest call, taken apart live.</p>
+      <p class="grow">Verdict in 30 seconds, then the math, then the one move that matters this week. You leave knowing exactly what an investor will see.</p>
+      <div class="price"><span><b>$375</b> / hour</span><a href="mailto:hello@tmaleh.com?subject=Teardown">Book a teardown</a></div>
+    </article>
+    <article class="offer">
+      <span class="tagline">by application</span>
+      <h3>In the Room</h3>
+      <p class="hook">I work inside your company on what decides the next 12 months.</p>
+      <p class="grow">Fundraising, go-to-market or AI operations, for a set stretch. Paid in cash, with advisory equity on the table. A few companies at a time.</p>
+      <div class="price"><span>Apply</span><span class="email">hello@tmaleh.com</span></div>
+    </article>
+  </div>
+  <div class="price-note"><span><b>Price change</b>The Proof Academy goes to $73/month on January 1, 2027. Join before then to lock in $57.</span><a href="mailto:hello@tmaleh.com?subject=Proof%20Academy%20early%20access">Get early access</a></div>
+</section>
+
+<section class="section wrap" aria-label="In the field">
+  <div class="sec-head"><h2>In the field</h2><p>Stages, studios, classrooms and judging tables.</p></div>
+  <div class="seen" aria-label="Seen at: a16z Tech Week, 1752vc, Techstars, Wefunder Studio, Mandala Space Accelerator, Product Hunt, LMU, UCLA, USC, Columbia University, CMU"><span class="seen-k">// seen at</span><div class="seen-viewport"><div class="seen-track" aria-hidden="true"><span>a16z Tech Week</span><span>1752vc</span><span>Techstars</span><span>Wefunder Studio</span><span>Mandala Space Accelerator</span><span>Product Hunt</span><span>LMU</span><span>UCLA</span><span>USC</span><span>Columbia University</span><span>CMU</span><span>a16z Tech Week</span><span>1752vc</span><span>Techstars</span><span>Wefunder Studio</span><span>Mandala Space Accelerator</span><span>Product Hunt</span><span>LMU</span><span>UCLA</span><span>USC</span><span>Columbia University</span><span>CMU</span></div></div></div>
+  <div class="gallery">
+    <figure class="ph tall" style="margin:0"><img src="photos/interview.jpg" alt="Taissa Maleh being interviewed on camera" loading="lazy"><figcaption><b>On camera</b></figcaption></figure>
+    <figure class="ph wide" style="margin:0"><img src="photos/lmu-panel.jpg" alt="Taissa Maleh moderating the Fundraising for Tech panel at LMU" loading="lazy"><figcaption><b>Moderator · Fundraising for Tech, LMU</b></figcaption></figure>
+    <figure class="ph" style="margin:0"><img src="photos/on-air.jpg" alt="Taissa Maleh on a TV studio set" loading="lazy"><figcaption><b>On air</b></figcaption></figure>
+    <figure class="ph" style="margin:0"><img src="photos/la-tech-week.jpg" alt="Taissa Maleh on the CPG Accelerator Map panel at LA Tech Week" loading="lazy"><figcaption><b>Panel · LA Tech Week</b></figcaption></figure>
+    <figure class="ph" style="margin:0"><img src="photos/wefunder.jpg" alt="Taissa Maleh on a Wefunder Studio webinar" loading="lazy"><figcaption><b>Webinar · Wefunder Studio</b></figcaption></figure>
+    <figure class="ph" style="margin:0"><img src="photos/lmu-selfie.jpg" alt="Taissa Maleh with judges and students at LMU" loading="lazy"><figcaption><b>With the room · LMU</b></figcaption></figure>
+    <figure class="ph wide" style="margin:0"><img style="object-position:50% 88%" src="photos/ucla-anderson-va.jpg" alt="Taissa Maleh at the UCLA Anderson Venture Accelerator" loading="lazy"><figcaption><b>UCLA Anderson Venture Accelerator</b></figcaption></figure>
+    <figure class="ph wide" style="margin:0"><img style="object-position:30% 72%" src="photos/strategy-session.jpg" alt="Taissa Maleh in a startup strategy session at a whiteboard" loading="lazy"><figcaption><b>Strategy session · building a startup</b></figcaption></figure>
+    <figure class="ph full" style="margin:0"><img src="photos/ucla-cohort.jpg" alt="Taissa Maleh with a cohort at the UCLA Center for Global Management" loading="lazy"><figcaption><b>Teaching · UCLA Center for Global Management</b></figcaption></figure>
+  </div>
+</section>
+
+<section class="section wrap" id="letter" aria-label="Newsletter and companies" style="padding-top:0">
+  <div class="duo">
+    <div class="panel">
+      <p class="eyebrow">Every Friday</p>
+      <h2>The Pattern Recognizer</h2>
+      <p>What I see across pre-seed deals, abstracted so no founder recognizes their own. Patterns, never names.</p>
+      <a class="btn primary" href="mailto:hello@tmaleh.com?subject=Subscribe%20to%20the%20Pattern%20Recognizer">Get it every Friday</a>
+    </div>
+    <div class="panel dark">
+      <p class="eyebrow">For companies</p>
+      <h2>AI operations</h2>
+      <p>I lead AI operations for companies that treat AI as infrastructure. Systems that make the whole team faster, built and run with you.</p>
+      <span class="email">hello@tmaleh.com</span>
+    </div>
+  </div>
+</section>
+
+<section class="closing" aria-label="Book">
+  <div class="wrap">
+    <h2>Nobody is coming to give you permission.</h2>
+    <p>Bring the proof you have. I'll tell you what it's worth.</p>
+    <div class="btns"><a class="btn primary" href="mailto:hello@tmaleh.com?subject=Teardown">Book a teardown</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Taissa Maleh</span>
+    <nav aria-label="Elsewhere">
+      <a href="https://x.com/tmaleh9" target="_blank" rel="noopener">X @tmaleh9</a>
+      <a href="https://www.linkedin.com/in/tmaleh" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/tmaleh9/founder-tools" target="_blank" rel="noopener">GitHub</a>
+      <span class="email">hello@tmaleh.com</span>
+    </nav>
+  </div>
+</footer>
+
+<script>
+const RUNGS=[
+  {n:"Symptom",show:"The pain, and exactly who has it.",q:"Who felt this last week, and what did it cost them?"},
+  {n:"First derivative",show:"What is changing, and how fast.",q:"What is different about this problem now than two years ago, and how do you know?"},
+  {n:"Second derivative",show:"Why it is changing, with evidence you gathered yourself.",q:"Show me something you found that is not in any report."},
+  {n:"Third derivative",show:"The root cause in human terms: incentives, fear, status, trust, habit.",q:"If the technology got ten times cheaper tomorrow, why would the problem still exist?"},
+  {n:"Community",show:"People who share the belief, already gathering around you.",q:"Who shows up for this problem without being paid to?"}
+];
+const L=document.getElementById('cardsL'),R=document.getElementById('cardsR'),ladder=document.getElementById('ladder'),stackList=document.getElementById('stackList');
+RUNGS.forEach((r,i)=>{
+  const rung=document.createElement('div');rung.className='rung';rung.style.top=(8+i*21)+'%';rung.innerHTML='<span>0'+(i+1)+'</span>';ladder.appendChild(rung);
+  const a=document.createElement('div');a.className='card';a.innerHTML='<div class="k">Rung '+(i+1)+'</div><h3>'+r.n+'</h3><p>'+r.show+'</p>';L.appendChild(a);
+  const b=document.createElement('div');b.className='card';b.innerHTML='<div class="k">The question</div><q>'+r.q+'</q>';R.appendChild(b);
+  const li=document.createElement('li');li.innerHTML='<div class="k">Rung '+(i+1)+'</div><h3>'+r.n+'</h3><p>'+r.show+'<br><b>'+r.q+'</b></p>';stackList.appendChild(li);
+});
+// the reveal line, word by word
+const words=["The","deck","doesn't","win.","Depth","does."];
+const big=document.getElementById('big');
+words.forEach((w,i)=>{const s=document.createElement('span');s.className='w'+(i===4||i===5?' beamw':'');s.textContent=w;s.style.transitionDelay=(0.25+i*0.09)+'s';big.appendChild(s);big.appendChild(document.createTextNode(' '))});
+const scan=document.querySelector('.scan'),stage=document.getElementById('stage'),beam=document.getElementById('beam'),counter=document.getElementById('counter');
+const rungs=[...ladder.querySelectorAll('.rung')],cl=[...L.children],cr=[...R.children];
+function onScroll(){
+  const rect=scan.getBoundingClientRect(),total=scan.offsetHeight-innerHeight;
+  const p=Math.min(1,Math.max(0,-rect.top/total));
+  const steps=p*6.2; const idx=Math.min(4,Math.floor(steps)); const done=steps>=5.1;
+  stage.style.setProperty('--d',done?1:Math.min(1,Math.pow(p,.6)*1.2).toFixed(3));
+  beam.style.top=(8+Math.min(4,steps)*21)+'%';
+  rungs.forEach((el,i)=>el.classList.toggle('on',i<=idx));
+  cl.forEach((el,i)=>el.classList.toggle('on',i===idx&&!done));
+  cr.forEach((el,i)=>el.classList.toggle('on',i===idx&&!done));
+  counter.textContent='RUNG '+(idx+1)+' / 5';
+  stage.classList.toggle('done',done);
+  const secs=['method','work','letter'];let cur='';
+  secs.forEach(id=>{const s=document.getElementById(id);if(s&&s.getBoundingClientRect().top<innerHeight*.5)cur=id});
+  document.querySelectorAll('.nav a.link').forEach(a=>a.classList.toggle('on',a.dataset.sec===cur));
+}
+addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);onScroll();
+</script>
+
+</body>
+</html>

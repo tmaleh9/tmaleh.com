@@ -297,6 +297,14 @@ footer a{text-decoration:none} footer a:hover{color:var(--ink)}
   .closing h2{font-size:clamp(1.9rem,8.5vw,2.6rem)}
   footer{padding-block:32px 40px}
 }
+
+/* teardown highlight */
+.offer.feature{position:relative;isolation:isolate;border-color:var(--beam);box-shadow:0 0 0 1px var(--beam),0 0 24px color-mix(in srgb,var(--beam) 60%,transparent),0 0 80px color-mix(in srgb,var(--beam) 35%,transparent);overflow:hidden}
+.offer.feature::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(120% 60% at 50% 0%,color-mix(in srgb,var(--beam) 14%,transparent),transparent 70%);pointer-events:none}
+.offer.feature::after{content:"";position:absolute;top:-50%;bottom:-50%;width:40%;left:-60%;z-index:1;background:linear-gradient(100deg,transparent,rgb(255 255 255 / .35) 50%,transparent);transform:skewX(-18deg);animation:gloss 4.5s ease-in-out infinite;pointer-events:none}
+@keyframes gloss{0%,55%{left:-60%}100%{left:130%}}
+.offer.feature .tagline{background:var(--beam);color:#fff}
+@media (prefers-reduced-motion: reduce){ .offer.feature::after{animation:none;display:none} }
 </style>
 </head>
 <body>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Page not found · Taissa Maleh</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#eceef2">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,800&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+/* Same tokens as the home page, one screen: a big 404, one line, two ways back. */
+:root{
+  --field:#eceef2; --ink:#111318; --ink-2:#5b606c; --beam:#3d7bff;
+  --f-display:"Geist","Helvetica Neue",Arial,sans-serif;
+  --f-mono:"Geist Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --field:#0e1015; --ink:#eef0f4; --ink-2:#9aa0ad; --beam:#6b9bff; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --field:#0e1015; --ink:#eef0f4; --ink-2:#9aa0ad; --beam:#6b9bff; color-scheme:dark }
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;min-height:100dvh;display:grid;place-items:center;background:var(--field);color:var(--ink);font-family:var(--f-display);-webkit-font-smoothing:antialiased;
+  padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+:focus-visible{outline:2px solid var(--beam);outline-offset:3px;border-radius:6px}
+main{max-width:640px;text-align:center}
+.eyebrow{font-family:var(--f-mono);font-size:.8125rem;color:var(--ink-2);text-transform:uppercase;letter-spacing:.1em;margin:0 0 18px}
+h1{font-family:"Archivo","Helvetica Neue",Arial,sans-serif;font-stretch:125%;font-weight:800;font-size:clamp(5rem,22vw,11rem);letter-spacing:-.045em;line-height:.9;margin:0}
+p.line{font-weight:500;font-size:clamp(1.25rem,3.4vw,1.9rem);letter-spacing:-.035em;line-height:1.15;margin:22px 0 34px;text-wrap:balance}
+.ctas{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;padding:13px 22px;border-radius:999px;font-weight:500;font-size:15px;text-decoration:none;border:1px solid var(--ink);color:var(--ink)}
+.btn.solid{background:var(--ink);color:var(--field)}
+</style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">Page not found</p>
+  <h1>404</h1>
+  <p class="line">No proof this page exists. Let's get you back to something that does.</p>
+  <div class="ctas">
+    <a class="btn solid" href="/">Go to tmaleh.com</a>
+    <a class="btn" href="/ladder/">Score your company</a>
+  </div>
+</main>
+</body>
+</html>
